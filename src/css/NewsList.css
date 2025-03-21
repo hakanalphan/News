@@ -1,0 +1,114 @@
+/* Genel stil ayarları */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Haber başlıkları */
+.news-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  color: #333;
+}
+
+/* Haberlerin genel düzeni */
+.news-flex {
+  display: flex;
+  flex-wrap: wrap; /* Bir satırda 3 haber, fazla haber alt satıra iner */
+  justify-content: space-between;
+  margin: 20px;
+  max-width: 1200px; /* Maksimum genişlik ayarı */
+}
+
+/* Her bir haber öğesinin stili */
+.news-item {
+  background-color: white;
+  border-radius: 12px; /* Köşeleri yuvarlak yapıyoruz */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  width: 30%; /* 3 öğe yanyana olacak şekilde %30 genişlik */
+  margin-bottom: 20px;
+  overflow: hidden; /* Fazla içeriğin görünmesini engelliyoruz */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Görsellerin düzenlenmesi */
+.news-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.news-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.news-date {
+  font-size: 0.9rem;
+  color: #888;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.news-description {
+  font-size: 1rem;
+  color: #555;
+  padding: 0 10px 10px 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Metni 4 satıra kısıtla */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis; /* Fazla metni '...' ile kes */
+  line-height: 1.6;
+}
+
+.news-link {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 10px auto;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.news-link:hover {
+  background-color: #0056b3;
+}
+
+/* Mobil uyumlu tasarım */
+@media (max-width: 768px) {
+  .news-item {
+    width: 45%; /* Tablet için %45 genişlik */
+  }
+}
+
+@media (max-width: 480px) {
+  .news-item {
+    width: 100%; /* Küçük ekranlarda her haber tam genişlikte olacak */
+  }
+}
